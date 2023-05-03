@@ -8,4 +8,9 @@ export namespace Math2 {
   export const randomFloat = math2RandomFloat;
   export const interpolate = math2Interpolate;
   export const round = math2Round;
+
+  export function clamp(min: number, value: number, max: number) {
+    return Math.max(min, Math.min(value, max));
+  }
+
 }
