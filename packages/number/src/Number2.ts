@@ -1,25 +1,23 @@
-import { numberEven, numberOdd } from "./types";
+import Number from "../index";
 
 export namespace Number2 {
 
-  export function isOdd(number: number): number is numberOdd {
+  export function isNumber(value: unknown): value is number {
+    return typeof value === 'number';
+  }
+
+  export function assertsValueIsNumber(value: unknown): asserts value is number {
+    if (!isNumber(value)) {
+      throw new Error("value is not a number");
+    }
+  }
+
+  export function isOdd(number: number) {
     return (number & 1) === 1;
   }
 
-  export function assertsNumberIsOdd(number: number): asserts number is numberOdd {
-    if (!isOdd(number)) {
-      throw new Error('number is not odd')
-    }
-  }
-
-  export function isEven(number: number): number is numberEven {
+  export function isEven(number: number) {
     return (number & 1) === 0;
-  }
-
-  export function assertsNumberIsEven(number: number): asserts number is numberEven {
-    if (!isEven(number)) {
-      throw new Error('number is not even')
-    }
   }
 
 }
