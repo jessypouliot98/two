@@ -6,7 +6,7 @@ export namespace Number2 {
     return (number & 1) === 1;
   }
 
-  export function assertNumberIsOdd(number: number): asserts number is numberOdd {
+  export function assertsNumberIsOdd(number: number): asserts number is numberOdd {
     if (!isOdd(number)) {
       throw new Error('number is not odd')
     }
@@ -16,7 +16,7 @@ export namespace Number2 {
     return (number & 1) === 0;
   }
 
-  export function assertNumberIsEven(number: number): asserts number is numberEven {
+  export function assertsNumberIsEven(number: number): asserts number is numberEven {
     if (!isEven(number)) {
       throw new Error('number is not even')
     }

@@ -6,8 +6,8 @@ export namespace Array2 {
     return Array.isArray(array) && array.length > 0;
   }
 
-  export function assertNonEmpty<T>(array: T[]): asserts array is NonEmptyArray<T> {
-    if (!Array2.isNotEmpty) {
+  export function assertsNonEmpty<T>(array: T[]): asserts array is NonEmptyArray<T> {
+    if (!isNotEmpty(array)) {
       throw new Error("Array is empty or not an array");
     }
   }
