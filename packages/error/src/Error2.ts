@@ -19,4 +19,19 @@ export namespace Error2 {
       return err;
     }
   }
+
+  /**
+   * Returns result of `callback` or error.
+   * If `error` is not an `TErrorClass` it will throw the received error instead
+   */
+  export function boundaryStrict<TFunc extends () => any, TErrorClass extends typeof Error>(callback: TFunc, expectedErrors: TErrorClass[]): ReturnType<TFunc> | TErrorClass {
+    try {
+      return callback();
+    } catch (err) {
+      if (!expectedErrors.some((expectedError) => err instanceof expectedError)) {
+        throw err;
+      }
+      return err as TErrorClass;
+    }
+  }
 }

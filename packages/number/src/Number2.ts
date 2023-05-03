@@ -1,5 +1,3 @@
-import Number from "../index";
-
 export namespace Number2 {
 
   export function isNumber(value: unknown): value is number {
