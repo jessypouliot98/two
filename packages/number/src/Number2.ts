@@ -10,6 +10,16 @@ export namespace Number2 {
     }
   }
 
+  export function isNumberStrict(value: unknown): value is number {
+    return typeof value === 'number' && Number.isFinite(value);
+  }
+
+  export function assertsValueIsNumberStrict(value: unknown): asserts value is number {
+    if (!isNumberStrict(value)) {
+      throw new Error("value is not a number");
+    }
+  }
+
   export function isOdd(number: number) {
     return (number & 1) === 1;
   }
