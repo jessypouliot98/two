@@ -1,12 +1,12 @@
 {
   "name": "two",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "repository": "git@github.com:jessypouliot98/two.git",
   "author": "Jessy Pouliot <jessypouliot98@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "test": "jest"
+  "workspaces": {
+    "packages": ["packages/*"]
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
