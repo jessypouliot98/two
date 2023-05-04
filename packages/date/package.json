@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf node_modules .turbo coverage lib",
     "build": "tsc",
     "lint": "eslint .",
     "test": "jest"

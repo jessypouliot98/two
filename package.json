@@ -10,7 +10,10 @@
   },
   "scripts": {
     "turbo": "turbo",
-    "test": "yarn turbo test"
+    "clean": "yarn turbo clean",
+    "test": "yarn turbo test",
+    "build": "yarn turbo build",
+    "lint": "yarn turbo lint"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
