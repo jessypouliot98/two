@@ -2,15 +2,12 @@ import { randomInt as math2RandomInt } from "./randomInt";
 import { randomFloat as math2RandomFloat } from "./randomFloat";
 import { interpolate as math2Interpolate } from "./interpolate";
 import { round as math2Round } from "./round";
+import { clamp as math2Clamp } from "./clamp";
 
 export namespace Math2 {
   export const randomInt = math2RandomInt;
   export const randomFloat = math2RandomFloat;
   export const interpolate = math2Interpolate;
   export const round = math2Round;
-
-  export function clamp(min: number, value: number, max: number) {
-    return Math.max(min, Math.min(value, max));
-  }
-
+  export const clamp = math2Clamp;
 }
