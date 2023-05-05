@@ -1,10 +1,11 @@
 {
   "name": "@2two/json",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf node_modules .turbo coverage lib",
