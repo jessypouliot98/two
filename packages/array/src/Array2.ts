@@ -18,14 +18,19 @@ export namespace Array2 {
     return array[Math.floor(Math.random() * array.length)];
   }
 
-  const filterNilPredicate = (value: unknown) => value == undefined
+  const filterNilPredicate = (value: unknown) => value != undefined
   export function filterNil<T>(array: (T | undefined | null)[]) {
     return array.filter(filterNilPredicate) as unknown as T[];
   }
 
-  const rangeMapFn = (_: unknown, i: number) => i;
-  export function range(length: number) {
-    return Array.from({ length }, rangeMapFn);
+  export function range(max: number, _?: never): number[];
+  export function range(min: number, max: number): number[];
+  export function range(v1: number, v2?: number) {
+    const min = typeof v2 === 'number' ? v1 : 0;
+    const max = typeof v2 === 'number' ? v2 : v1;
+
+    const length = (max - min) + 1;
+    return Array.from({ length }, (_, i) => i + min);
   }
 
 }
