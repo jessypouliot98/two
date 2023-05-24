@@ -1,0 +1,1 @@
+export type Merge<TSource extends object, TExtra extends object> = Omit<TSource, keyof TExtra> & TExtra;

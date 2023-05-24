@@ -1,21 +1,12 @@
 export namespace Number2 {
 
-  export function isNumber(value: unknown): value is number {
-    return typeof value === 'number';
+  export type IsNumberOptions = { strict?: boolean };
+  export function isNumber(value: unknown, opts: IsNumberOptions = { strict: true }): value is number {
+    return typeof value === 'number' && opts.strict ? Number.isFinite(value) : true;
   }
 
-  export function assertsValueIsNumber(value: unknown): asserts value is number {
-    if (!isNumber(value)) {
-      throw new Error("value is not a number");
-    }
-  }
-
-  export function isNumberStrict(value: unknown): value is number {
-    return typeof value === 'number' && Number.isFinite(value);
-  }
-
-  export function assertsValueIsNumberStrict(value: unknown): asserts value is number {
-    if (!isNumberStrict(value)) {
+  export function assertsValueIsNumber(value: unknown, opts?: IsNumberOptions): asserts value is number {
+    if (!isNumber(value, opts)) {
       throw new Error("value is not a number");
     }
   }
